@@ -23,7 +23,7 @@ spec:
       imagePullSecrets:
       - name: registry-secret
       containers:
-      - image: itsscmp/sanie:beta.v1.16
+      - image: itsscmp/sanie:live.v1.0
         name: odoo
         env:
         - name: HOST
