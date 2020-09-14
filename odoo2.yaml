@@ -3,6 +3,9 @@ kind: Deployment
 metadata:
   name: odoo2
   namespace: odoo
+  annotations:
+    fluxcd.io/automated: "true"
+    fluxcd.io/tag.odoo: glob:beta.v1.*
   labels:
     app: odoo2
 
