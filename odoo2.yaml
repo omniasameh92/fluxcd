@@ -5,7 +5,7 @@ metadata:
   namespace: odoo
   annotations:
     fluxcd.io/automated: "true"
-    fluxcd.io/tag.odoo: glob:beta.v1.*
+    fluxcd.io/tag.odoo: glob:live.v1.*
   labels:
     app: odoo2
 
