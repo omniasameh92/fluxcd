@@ -1,0 +1,15 @@
+name: Docker Image CI
+on:
+  push:
+    branches:
+      - master
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - name: Build the Docker image
+      run: |
+          echo "${{ secrets.DOCKERPW }}" | docker login -u itsscmp  --password-stdin
+          docker image build -t itsscmp/gitops:hello.v1.1
+          docker push itsscmp/gitops:hello.v1.1
