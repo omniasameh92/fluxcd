@@ -11,5 +11,5 @@ jobs:
     - name: Build the Docker image
       run: |
           echo "${{ secrets.DOCKERPW }}" | docker login -u itsscmp  --password-stdin
-          docker image build -t itsscmp/gitops:hello.v1.1 .
-          docker push itsscmp/gitops:hello.v1.1
+          docker image build -t itsscmp/gitops:hello.v1.$(echo ${GITHUB_SHA} | cut -c1-8) .
+          docker push itsscmp/gitops:hello.v1.$(echo ${GITHUB_SHA} | cut -c1-8)
